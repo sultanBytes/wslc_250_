@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 1100px;
+			margin: auto;
+			border: 2px solid;
+			display: flex;
+/*			height: 800px;*/
+/*			flex-wrap: wrap;*/
+/*			flex-direction: row;*/
+			flex-flow: wrap column;
+			justify-content: start;
+/*			gap: 10px 20px;*/
+			row-gap: 10px;
+			column-gap: 20px;
+/*			align-items: stretch;*/
+/*			align-content: space-around;*/
+		}
+		.box{
+			background: magenta;
+			flex-basis: 24%;
+/*			height: 200px;*/
+			border: 2px solid yellow;
+			text-align: center;
+/*			line-height: 200px;*/
+			font-size: 30px;
+/*			flex-grow: 1;*/
+/*			order: ;*/
+		}
+		/*.b1{
+			order: 0;
+			flex-grow: 1;
+		}
+		.b3{
+			order: 0;
+		}
+		.b2{
+			order: 0;
+		}
+		.bs{
+			flex-grow: 2;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box b1">1</div>
+		<div class="box b2">2</div>
+		<div class="box b3">3</div>
+		<div class="box">4</div>
+		<div class="box bs">5</div>
+		<div class="box">6</div>
+		<div class="box">7</div>
+		<div class="box">8</div>
+		<div class="box">9</div>
+		<div class="box">10</div>
+		<div class="box">11</div>
+		<div class="box">12</div>
+		<div class="box">13</div>
+		<div class="box">14</div>
+	</div>
+</body>
+<script type="text/javascript">
+	//****Flex box
+	// *1)  display : flex
+	// *2) flex-wrap : wrap | nowrap | wrap-reverse
+	// *3) flex-direction : row | column | row-reverse | column-reverse
+	// 4) flex-flow : (shorthand of directiona and wrap)
+	// *5) justify-content: start | end | center | space-between | space-around | space-evenly
+	//						flex-start | flex-end
+	// 6) align-items: stretch | flex-start | flex-end | center
+	// 7) align-content : flex-end | flex-start | center | space-around | space-evenly | 								space-between
+	// 8) gap : 10px | 10px 20px (row-gap | column-gap)
+
+
+	// ** Flex-items
+	// order : 1  (default order - 0)
+	// *flex-basis : 
+
+	// console.log(9007199254740991 + 1);
+	// console.log(9007199254740991 + 2);
+
+	// +-((2**53) - 1)
+</script>
+</html>
+
+

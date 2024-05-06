@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: sans-serif;
+}
+body{
+	background-image: url('images/waves_.jpg');
+	background-size: cover;
+}
+.wrapper{
+	width: 1000px;
+	margin: auto;
+	box-shadow: 0 0 10px 2px black;
+}
+.header{
+	width: 100%;
+	background-image: url('images/headerbg.jpg');
+	background-size: cover;
+	border-bottom: 10px solid skyblue;
+}
+.header_overlay{
+	width: 100%;
+	background-image: url('images/gridtile.png');
+	padding: 20px 0;
+}
+.logo{
+	width: 350px;
+	margin: auto;
+}
+.logo img{
+	width: 100%;
+}
+.header_middle{
+	width: 400px;
+/*	margin: auto;*/
+	border-top: 1px solid lightblue;
+	border-bottom: 1px solid lightblue;
+	text-align:center;
+	color: white;
+	padding: 20px 0;
+	margin: 100px auto;
+	
+}
+.header_middle h1{
+	font-weight: normal;
+}
+.menu ul{
+	text-align: center;
+}
+.menu ul li{
+	display: inline-block;
+	border-right: 2px solid white;
+	padding:15px 20px;
+/*	background:red;*/
+}
+
+.menu ul li a{
+	color: white;
+}
+.menu ul li:last-child{
+	border: none;
+}
+.home_banner{
+	background-image: url('images/3.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+.overlay{
+	width: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	text-align: center;
+	padding: 120px 0;
+}
+
+.overlay div{
+	border: 10px solid white;
+	display: inline-block;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+}
+.home_content{
+	background: white;
+	padding: 70px 20px;
+	text-align: center;
+}
+.home_content a{
+	color: black;
+}
+.home_content h5{
+	margin: 60px 0 10px 0;
+	font-size: 18px;
+}
+.home_content div{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.about_banner{
+	background-image: url('images/1.jpg');
+}
+
+html{
+	scroll-behavior: smooth;
+}

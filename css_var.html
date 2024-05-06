@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --shubham: yellow;
+            --radius: 4px;
+            --bharti:red;
+            --btnPadding:10px 20px;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* background-color: red; */
+        }
+        .main{
+            width: 400px;
+            border: 1px solid black;
+            color: var(--shubham);
+            background-color: white !important;
+        }
+
+        .container{
+            color: var(--shubham);
+        }
+        button{
+            border-radius: var(--radius);
+            padding: var(--btnPadding);
+        }
+        .wrapper{
+            width:1000px;
+            margin: auto;
+            height: 400px;
+            background-color: lightblue;
+            border: 5px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            /* width: calc(50% - 20px); */
+            /* height: calc(100% - 20px); */
+            width: 50%;
+            height: 100%;
+            background-color: yellow;
+            padding: 10px;
+            box-sizing: border-box;
+           
+        }
+        .item1{
+            width: 50%;
+            height: 100%;
+            background-color: lightgray;
+        }
+        .background{
+            width: 300px;
+            height: 400px;
+            border: 2px solid green;
+            margin: 200px auto;
+            /* background-image: repeating-linear-gradient( #192145, #200E17 10%, red 20%); */
+            /* background-image: radial-gradient(red, yellow 40%, green); */
+            background-image: conic-gradient(red, yellow, black);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque est soluta laboriosam ullam delectus at, ab dolores quisquam laborum. Alias cum eligendi recusandae voluptas doloribus omnis possimus consectetur, fuga maiores!
+        </p>
+        <p>
+            hello
+        </p>
+    </div>
+    <div class="container">
+        <p>para</p>
+        <button>my btn</button>
+    </div>
+
+    <div class="wrapper">
+        <div class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat illum repellendus saepe eum dolor reiciendis quasi aliquid odit, hic quas soluta nesciunt deleniti adipisci minima necessitatibus. Corrupti eveniet quod aperiam.
+        </div>
+        <div class="item1"></div>
+    </div>
+
+    <div class="background"></div>
+</body>
+</html>

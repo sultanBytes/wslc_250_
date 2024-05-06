@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.wrapper{
+			width: 1000px;
+			height: 600px;
+			margin:100px auto;
+			background-color: darkcyan;
+			display: grid;
+			place-items: center;
+			/* grid-template-columns:repeat(3, 1fr); */
+			/* grid-gap: 10px 5px; */
+			/* grid-row-gap: 10px; */
+			/* grid-column-gap:10px ; */
+			/* grid-template-rows: 1fr 2fr 1fr; */
+			/* display: flex; */
+			/* flex-wrap: wrap; */
+			
+		}
+		.inner{
+			width: 20%;
+			background-color: red;
+			padding: 30px 0;
+			text-align: center;
+			border: 2px solid black;
+		}
+		/* .inner1{
+			grid-row-start: 1;
+			grid-row-end: 2;
+			grid-column-start: 1;
+			grid-column-end: 4;
+		} */
+
+		.inner2{
+			grid-row-start: 2;
+			grid-row-end: 3;
+			grid-column-start: 2;
+			grid-column-end: 3;
+		}
+		.inner3{
+			grid-row-start: 3;
+			grid-row-end: 4;
+			grid-column-start: 3;
+			grid-column-end: 4;
+		}
+
+		.main{
+			margin: 100px auto;
+			padding: 30px 0;
+			text-align: center;
+			font-size: 40px;
+			border: 1px solid;
+			font-weight: bold;
+			color: white;
+			-webkit-text-stroke: 1px black;
+			text-shadow: 5px 5px 2px black;
+		}
+
+		h1{
+			font-size: 80px;
+			background: linear-gradient(to right,red, yellow, skyblue, green, black, blue);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		h2{
+			/* font-size: 80px; */
+			background: linear-gradient(orange, white, green);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	</style>
+</head>
+<body>
+	<h2>
+		Let's Cooperate With The G20 Together
+	</h2>
+	<h1>
+		Hello Everyone
+	</h1>
+	<div class="main">
+		Hello Everyone
+	</div>
+	<div class="wrapper">
+		<div class="inner inner1">112345678</div>
+		<!-- <div class="inner inner2">2</div> -->
+		<!-- <div class="inner inner3">3</div> -->
+		<!-- <div class="inner">4</div>
+		<div class="inner">5</div>
+		<div class="inner">6</div>
+		<div class="inner">7</div>
+		<div class="inner">8</div>
+		<div class="inner">9</div> -->
+	</div>
+</body>
+</html>

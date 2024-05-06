@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			line-height: 10px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		// for(let i = 1; i <= 5; i++){
+			
+
+		// 	for(let j = 1; j <= 4; j++){
+		// 		console.log('hello');
+		// 	}
+
+
+		// }
+
+		// document.write('hello')
+		// document.write('<br/>')
+		// document.write('hello 01')
+
+		// for(let i = 2; i <= 20; i++){
+
+		// 	for(let j = 1; j <= 10; j++){
+		// 		document.write(i * j + '-');
+		// 	}
+
+		// 	document.write('<br/>')
+
+		// }
+
+		// document.write('&nbsp;')
+
+
+		// triangle start pattern
+
+		//let rows = 6;
+
+		// for(let i = 1; i <= rows; i++){
+		// 	for(let j = 1; j <= rows - i; j++){
+		// 		document.write('&nbsp;&nbsp;');
+		// 	}
+
+		// 	for(let k = 1; k <= (2 * i) -1; k++){
+		// 		document.write('*');
+		// 	}
+
+		// 	document.write('<br/>')
+
+		// }
+
+
+
+		// for(let i = rows -1; i >= 1; i--){
+		// 	for(let j = 1; j <= rows - i; j++){
+		// 		document.write('&nbsp;&nbsp;');
+		// 	}
+
+		// 	for(let k = 1; k <= i * 2 - 1; k++){
+		// 		document.write('*');
+		// 	}
+
+
+		// 	document.write('<br/>')
+		// }
+
+
+		// square
+
+			let rows = 6;
+			for(let i = 1; i <= rows; i++){
+				for(let j = 1; j <= rows; j++){
+
+
+					if(i === 1 || i === rows || j === 1 || j === rows)
+					{
+						document.write('*');
+					}
+					else
+					{
+						document.write('&nbsp;&nbsp;')
+					}
+
+					
+				}
+
+				document.write('<br/>')
+			}
+	</script>
+</body>
+</html>

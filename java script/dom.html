@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.divp{
+			width: 300px;
+			height: 200px;
+			background: red;
+			font-size: 50px;
+			color: white;
+			text-align: center;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="divp" id="d1">hello</div>
+	<div class="divp" id="d2">good</div>
+	<button onclick="clickMe()">click me</button>
+
+
+	<script type="text/javascript">
+		let d1 = document.getElementById('d1');
+		let d2 = document.getElementById('d2');
+
+		
+
+		const clickMe = ()=>{
+			let d1content = d1.innerText;
+
+			d1.innerText = d2.innerText;
+			d2.innerText = d1content;
+		};
+
+		// console.log(txt)
+	</script>
+</body>
+</html>
+
+<!-- 
+dom selectors
+	document.getElementById('id');
+	document.getElementsByTagName('tagname')
+	document.getElementsByClassName('classname')
+	document.querySelector('css slector');
+	document.querySelectorAll('css slector');
+
+ -->

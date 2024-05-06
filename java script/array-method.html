@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		let x = 100;
+		let y = 1000;
+
+		for(let i = x; i <= y; i++)
+		{
+			let currentNumber = String(i);
+			let len = currentNumber.length;
+			let tSum = 0;
+
+			for(let j = 0; j < len; j++)
+			{
+				tSum += currentNumber[j]**len;
+			}
+
+			console.log(tSum)
+
+			if(currentNumber == tSum)
+			{
+				console.log(currentNumber);
+			}
+			
+		}
+
+
+		// let word = 'abcdedcbat';
+
+		// let x = Math.floor(word.length / 2);
+
+		// let ifPalindrome = 'this is palindrome string';
+
+		// for(let i = 0; i < x; i++){
+		// 	if(word[i] != word[word.length - (i+1)])
+		// 	{
+		// 		ifPalindrome = 'this is  not palindrome string';
+
+		// 		break;
+		// 	}
+		// }
+
+
+		// console.log(ifPalindrome);
+	</script>
+</body>
+<script type="text/javascript">
+	const arr = [90,45,10,20,30,40,50,60,70,80,];
+	const arr2 = ['hello','one','john','zayn','yogesh'];
+
+	let str = arr2.toSorted();
+	str = str.toReversed();
+
+	// console.log(str)
+
+	// arr2.sort();
+	// arr2.reverse();
+
+
+	// delete arr[1];
+
+	// console.log(arr[1])
+
+
+	// const newArr = arr.toString();
+
+	// const newArr = arr.join(',');
+
+	// const arr2 = [2,3,4,5,8];
+	// const arr3 = [2,4,9,0,1,2]
+
+	// let newArr = arr.concat(arr2,arr3);
+
+	// console.log(newArr)
+</script>
+</html>

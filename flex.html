@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.main{
+			max-width: 1000px;
+			display: flex;
+			border: 1px solid yellow;
+			margin: auto;
+			flex-wrap: wrap;
+			background-color: antiquewhite;
+			/* flex-direction: column; */
+			
+		}
+		.inner{
+			background-color: red;
+			border: 1px solid black;
+			flex-basis:50%;
+			
+		}
+
+		.main h1{
+			font-size: 3vw;
+			text-align: center;
+		}
+
+		@media only screen and (max-width:992px){
+			.main{
+				flex-direction: column;
+			}
+			/* .inner{
+				width:100%;
+			} */
+			.main h1{
+				/* font-size: 30px; */
+			}
+		}
+
+		@media only screen and (max-width:667px){
+			.main h1{
+				font-size: 5vw;
+				/* font-size: 18px; */
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1>
+			Lorem ipsum dolor sit amet consectetur
+		</h1>
+		<div class="inner">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, dolor obcaecati sint ab dolorum explicabo eligendi voluptas vel dolorem quasi quam aspernatur architecto temporibus aliquid nostrum eius accusamus molestiae optio!
+		</div>
+		<div class="inner">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ipsam fugiat eum autem, officia nostrum. Natus similique corporis minus fuga rem in praesentium incidunt repellendus, provident a quod laudantium facilis!
+		</div>
+	</div>
+</body>
+</html>

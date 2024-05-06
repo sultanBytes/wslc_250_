@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			width: 1000px;
+			border: 5px solid;
+			margin: auto;
+			position: relative;
+			z-index: 99;
+/*			top: 100px;*/
+		}
+		.r1{
+			height: 300px;
+			background: yellow;
+		}
+		.r2{
+			border: 5px solid red;
+		}
+		.d1{
+			height: 200px;
+			position: absolute;
+			width: 100px;
+			background: magenta;
+			top: 0;
+			left: 0;
+			z-index: 10;
+
+		}
+
+		.main{
+			width: 1000px;
+			margin: auto;
+			height: 1000px;
+			background: lightgray;
+		}
+
+		.d2{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			background: black;
+			right: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="r1"></div>
+		<div class="r2">
+			<div class="d1"></div>
+			<div class="d2"></div>
+		</div>
+	</div>
+	<div class="main"></div>
+</body>
+<script type="text/javascript">
+	//  let obj = {
+	//     name:'test',
+	//     age:'20',
+	//     contact:'000000000'
+  	// };
+
+  	// // Object.freeze(obj);
+  	// obj = {...obj, age:'26'}
+  	// console.log(obj)
+</script>
+</html>

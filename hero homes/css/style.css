@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+:root{
+    --theme-red-color:#ED1C24;
+    --heading-font-color:#213C2B;
+    --text-color:#0A2233;
+    --green-checkbox-color:#00D26A;
+    --faq-hover-color:#03B5D2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Assistant", sans-serif;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 1px 1px gray;
+    z-index: 9999;
+    background-color: white;
+}
+.logo{
+    width: 180px;
+}
+.logo img{
+    width: 100%;
+}
+
+.header .nav > ul{
+    display: flex;
+
+}
+
+.header .nav > ul > li {
+    padding: 0 6px;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+.header .nav > ul a{
+    color: black;
+}
+
+.menu-bar{
+    display: none;
+    
+}
+.banner {
+    position: relative;
+}
+
+.banner > div img{
+    width: 100%;
+}
+
+.banner-form{
+    position: absolute;
+    width: 450px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 10%;
+    border-radius: 8px;
+    left: 60%;
+}
+
+.banner-form h1{
+    padding: 15px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+}
+
+.banner-form > ul{
+    border-radius: 8px;
+    border: 1px solid grey;
+    margin: 10px 0;
+}
+
+.banner-form > ul li{
+    padding: 15px;
+    border-bottom: 1px solid grey;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.banner-form > ul li:last-child{
+    border: none;
+}
+
+.banner-form > ul li:nth-of-type(even){
+    color: red;
+    
+}
+
+.banner-form > div{
+    display: flex;
+    justify-content: space-around;
+}
+.banner-form > div > button{
+    padding: 10px;
+    width: 48%;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.key-feature-section{
+    background-color: lightgrey;
+    padding: 20px 0;
+}
+
+.key-feature-section .inner{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.key-feature-section ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key-feature-section ul li{
+    flex-basis: 50%;
+}

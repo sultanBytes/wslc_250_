@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			list-style: none;
+		}
+
+		div{
+			border: 2px solid black;
+			width: 200px;
+			margin: auto;
+		}
+
+		li{
+			text-align: center;
+			margin: 5px 0;
+			font-size: 20px;
+		}
+
+		ul{
+			border: 2px solid yellow;
+		}
+
+		ol{
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>ul hello 1</li>
+			<li>ul hello 2</li>
+			<li>ul hello 3</li>
+			<li>ul hello 4</li>
+			<li>ul hello 5</li>
+			<li>ul hello 6</li>
+			<li>ul hello 7</li>
+			<li>ul hello 8</li>
+		</ul>
+
+		<ol>
+			<li>ol hello 1</li>
+			<li>ol hello 2</li>
+			<li>ol hello 3</li>
+			<li>ol hello 4</li>
+			<li>ol hello 5</li>
+			<li>ol hello 6</li>
+			<li>ol hello 7</li>
+			<li>ol hello 8</li>
+		</ol>
+	</div>
+</body>
+<script type="text/javascript">
+	const theLi = document.querySelector('ul li:nth-child(2)');
+
+	theLi.style.backgroundColor = 'red';
+
+	const nextEl = theLi.nextElementSibling;
+	const preEl = theLi.previousElementSibling;
+
+	const parentEl = theLi.parentNode;
+
+	const childEls = parentEl.childNodes;
+	const fisrtchildEls = parentEl.firstElementChild;
+	const lastchildEls = parentEl.lastElementChild;
+
+	const allChilds = parentEl.querySelectorAll('li');
+
+	const allChildren = parentEl.children;
+
+
+	const closestsLi = theLi.closest('ol');
+
+
+
+
+	console.log(allChilds, allChildren);
+</script>
+</html>

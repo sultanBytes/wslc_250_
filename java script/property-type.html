@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="password" id="passInp" name="">
+	<button id="showBtn">show</button>
+
+	<script type="text/javascript">
+		const btn = document.querySelector('#showBtn');
+		const inp = document.querySelector('#passInp');
+
+		btn.addEventListener('click', ()=>{
+
+			if(btn.innerText === 'show')
+			{
+				inp.type = 'text';
+
+				btn.innerText = 'hide'
+			}
+			else
+			{
+				inp.type = 'password';
+
+				btn.innerText = 'show'
+			}
+
+		});
+	</script>
+</body>
+</html>

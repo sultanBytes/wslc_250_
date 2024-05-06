@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		a{
+			color: white;
+			font-size: 24px	;
+		}
+		.header{
+			padding: 20px;
+			background: red;
+		}
+		.header > ul {
+			display: flex;
+		}
+
+		.header > ul > li{
+			padding: 0 10px;
+			position: relative;
+		}
+
+		.innerMenu{
+			padding-top: 19px;
+/*			border: 1px solid yellow;*/
+			position: absolute;
+/*			background: mediumseagreen;*/
+/*			top: 47px;*/
+			visibility: hidden;
+			opacity: 0;
+/*			transition: 0.2s;*/
+		}
+
+		.innerMenu > li{
+			background: magenta;
+			position: relative;
+			border-bottom: 2px solid black;
+		}
+
+		.innerMenu > li:last-child{
+			border: none;
+		}
+		.header > ul > li:hover .innerMenu{
+			visibility: visible;
+			opacity: 1;
+		}
+		.subInner{
+			position: absolute;
+			left: 100%;
+			top: 0;
+			background: grey;
+			width: 200px;
+			display: none;
+		}
+		.innerMenu > li:hover .subInner{
+			display: block;
+		}
+
+		body > h1{
+			-webkit-text-stroke:0.5px black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>hello</h1>
+	<div class="header">
+		<ul>
+			<li>
+				<a href="#">Home</a>
+				<ul class="innerMenu">
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+						<ul class="subInner">
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+							<li>
+								<a href="#">sub inner</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">Home</a>
+				<ul class="innerMenu">
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+					<li>
+						<a href="#">innerMenu</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Home</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+git clone <-link->
+git add [filename]
+git add .
+git commit -m "some massege"
+git push origin main
+git push -u origin main (git push)
+
+
+
+
+git init
+git remote add origin <-link->
+git branch
+git branch  -m [to rename branch]
+
+
+git checkout [branch name]
+git checkout -b [branch name]
+git checkout -d [branch name]
+
+git pull origin main
+
+git merge [branch name]
+
+

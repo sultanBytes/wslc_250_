@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	text-decoration: none;
+}
+body{
+	background:black;
+}
+.wrapper{
+	width: 1000px;
+	margin: auto;
+}
+.header{
+	width: 940px;
+	background-image: url('images/headerbg.jpg');
+	padding: 10px 30px;
+}
+.logo{
+	float: left;
+}
+.middle{
+	float: left;
+	text-align: center;
+	margin-top: 60px;
+	margin-left: 50px;
+	color: blue;
+}
+.contact{
+	background-image: url('images/topcontactbg.png');
+	float: left;
+	width: 266px;
+	margin-left: 30px;
+	margin-top: 15px;
+	padding: 10px 15px;
+	line-height: 32px;
+}
+.head_url{
+	font-weight: normal;
+}
+.contact_num{
+	color: white;
+}
+.clear{
+	clear: both;
+}
+.menubar{
+	background-image: url('images/menubg.jpg');
+	padding: 8px 60px 0;
+}
+.menuitem{
+	width: 127px;
+	background-image: url('images/menubackground.png');
+	line-height: 44px;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+	margin-left: 15px;
+	float: left;
+}
+a{
+	color: black;
+}
+.banner_section{
+	padding: 10px 0;
+}
+.left_menuitem{
+	background-image: url('images/leftmenubg.png');
+	width: 213px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+.left_menu{
+	float: left;
+	padding: 0 10px;
+}
+.banner{
+	float: left;
+	padding: 0 10px;
+
+}
+.about_banner{
+	background: white;
+	width: 723px;
+	padding: 10px;
+}
+.about_banner h2{
+	padding: 10px;
+}
+
+.aboutus{
+	border: 2px saddlebrown solid;
+	background-color: white;
+}

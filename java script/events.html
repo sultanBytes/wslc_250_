@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.main{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			transition: 1s;
+		}
+
+		ul li{
+			margin: 10px;
+			background-color: red;
+			width: 300px;
+			padding: 10px;
+			font-size: 20px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="main" id="d1"></div>
+
+	<ul>
+		<li>Hello 1</li>
+		<li>Hello 2</li>
+		<li>Hello 3</li>
+		<li>Hello 4</li>
+		<li>Hello 5</li>
+		<li>Hello 6</li>
+		<li>Hello 7</li>
+		<li>Hello 8</li>
+		<li>Hello 9</li>
+		<li>Hello 10</li>
+		<li>Hello 11</li>
+		<li>Hello 12</li>
+	</ul>
+
+	<script type="text/javascript">
+
+		const allLis = document.querySelectorAll('ul li');
+
+		console.log(allLis);
+
+		allLis.forEach((x)=>{
+			x.addEventListener('click', ()=>{
+				console.log('clicked')
+			})
+		});
+
+
+
+
+
+
+
+
+		const mainDiv = document.getElementsByClassName('main');
+
+		// console.log(mainDiv);
+
+		function theFunction(){
+			console.log('hello')
+		};
+
+		// function f2(){
+		// 	console.log('doubleClick')
+		// }
+
+		mainDiv[0].addEventListener('click', theFunction);
+
+		mainDiv[0].addEventListener('dblclick', ()=>{
+			console.log('dbl click')
+		});
+
+		mainDiv[0].addEventListener('mouseenter', ()=>{
+			mainDiv[0].style.width = '500px';
+			mainDiv[0].style.backgroundColor = 'yellow'
+		});
+
+		mainDiv[0].addEventListener('mouseleave', ()=>{
+			mainDiv[0].style.width = '200px';
+			mainDiv[0].style.backgroundColor = 'red'
+		});
+
+
+	</script>
+</body>
+</html>

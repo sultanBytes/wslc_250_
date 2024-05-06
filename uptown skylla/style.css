@@ -1,0 +1,325 @@
+:root{
+    --headingColor:#173E62;
+    --contentColor:#BDA588;
+    --backgoundColor:#F7F2EC;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header{
+    /* background-color: var(--headingColor); */
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.inner{
+    width: 1300px;
+    margin: auto;
+}
+
+.header .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+}
+.logo img{
+    width: 100%;
+}
+
+.nav a{
+    color: white;
+}
+
+.nav > ul{
+    display: flex;
+    font-size: 18px;
+}
+
+.nav > ul > li{
+    padding: 25px 0;
+    margin: 0 15px;
+    border-top: 3px  solid transparent;
+    position: relative;
+}
+
+.nav a i {
+    font-size: 12px;
+    
+}
+
+.activenav{
+    border-top: 3px solid var(--contentColor) !important;
+}
+
+.activenav a{
+    color: var(--contentColor);
+}
+
+.nav > ul > li:hover{
+    border-top: 3px solid var(--contentColor);
+}
+
+.nav > ul > li:hover a{
+    color: var(--contentColor);
+}
+
+.subnav{
+    position: absolute;
+    width: 300px;
+    padding-top: 40px;
+    display: none;
+    left: 0;
+}
+
+.nav > ul > li:hover .subnav{
+    display: inline;
+}
+.subnav >li {
+    padding: 20px 30px;
+    font-size: 16px;
+    background-color: white;
+}
+.subnav >li a{
+    color: gray;
+    position: relative;
+}
+
+.subnav >li a::before{
+    content: "";
+    width: 15px;
+    height: 3px;
+    background-color: var(--contentColor);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -30%;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.subnav >li a:hover::before{
+    left: -20%;
+    opacity: 1;
+}
+
+.subnav >li a:hover{
+    color: var(--contentColor);
+   
+}
+
+.floor > li{
+    padding: 10px 30px;
+}
+
+.section1{
+    height: 100vh;
+    background-image: url('https://uptownskylla.in/wp-content/uploads/2022/09/02_02-scaled.jpg');
+    background-size: 100% 100%;
+    display: flex;
+    padding: 250px 80px
+}
+
+.vrline{
+    width:0;
+    height: 270px;
+    border: 1px solid white;
+}
+.social-icons > li{
+    margin-top: 20px;
+}
+.social-icons > li > a{
+    color: white;
+    font-size: 12px;
+    transition: 0.4s;
+    
+}
+
+.social-icons > li > a:hover{
+    color: var(--contentColor);
+}
+.section1right{
+    color: white;
+    padding-left: 100px;
+}
+.section1right p{
+    font-size: 16px;
+
+    font-weight: bold;
+}
+.section1right h1{
+    font-size: 45px;
+    padding: 45px 0;
+
+}
+
+.section1right > div > button{
+    padding: 10px 15px;
+    border: 1px solid white;
+    background-color: var(--contentColor);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 17px;
+}
+.section1right > div > button:last-child{
+    margin-left: 20px;
+}
+
+.section1right > div > button:hover{
+    background-color: transparent;
+}
+
+.section1right h2{
+    padding: 30px 0;
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+.section2 .inner{
+    display: flex;
+    padding: 100px 0;
+}
+
+.section2-left{
+    width: 50%;
+}
+
+.section2-left h5{
+    word-spacing: 8px;
+    letter-spacing: 2px;
+    color: var(--contentColor);
+}
+
+.section2-left p {
+    padding: 40px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--headingColor);
+    line-height: 45px;
+}   
+
+.section2-right{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.section2-right h1{
+    font-size: 90px;
+    color: var(--contentColor);
+}
+
+.section2-right h1 sup{
+    font-weight: normal;
+}
+
+.section2-right div{
+    padding: 10px;
+    text-align: center;
+}
+
+.section2-right p{
+    font-size: 18px;
+    
+}
+.section2-right div:last-child h1{
+    padding-top: 15px;
+}
+
+.section3{
+    display: flex;
+    justify-content: end;
+}
+
+.section3 > div{
+    width: 85%;
+    padding-top: 15px;
+    background-color: var(--backgoundColor);
+    position: relative;
+    padding-left: 28%;
+    padding-right: 100px;
+    
+}
+
+.section3 > div h3{
+    color: var(--headingColor);
+    font-size: 22px;
+}
+
+.section3 > div p{
+    color: grey;
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.whoareweimage{
+    position: absolute;
+    width: 600px;
+    left: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.whoareweimage img{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.section3 > div button{
+    padding: 14px 18px;
+    background-color: var(--headingColor);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 80px;
+}
+
+.facts-section .inner{
+    padding-top: 70px;
+    padding-bottom: 200px;
+}
+.facts-section .inner > h1{
+    text-align: center;
+    color: var(--headingColor);
+    font-size: 55px;
+    padding: 80px 0;
+}
+
+.facts-section .inner > div{
+    display: flex;
+}
+
+.facts-section .inner > div > div {
+    width: 25%;
+    text-align: center;
+    font-size: 40px;
+}
+
+.facts-section .inner > div > div:nth-of-type(odd){
+    background-color: var(--backgoundColor);
+    padding: 10px 0 20px 0;
+}
+
+.facts-section .inner > div > div  i{
+    color: black;
+}
+
+.facts-section .inner > div > div  h4{
+    padding: 20px 0;
+    color: var(--headingColor);
+    font-weight: normal;
+}

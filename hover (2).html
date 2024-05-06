@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapper{
+			border: 10px solid black;
+			width: 800px;
+			margin: auto;
+		}
+		.d1{
+			height: 200px;
+			background: yellow;
+		}
+		.d2{
+			height: 200px;
+			background: green;
+		}
+		.d3{
+			height: 200px;
+			background: grey;
+		}
+
+		/*.wrapper:hover + ul li{
+			background-color: hotpink;
+		}*/
+
+		.wrapper:hover ~ .thisOl{
+			background: greenyellow;
+		}
+
+		ul{
+			background: yellow;
+		}
+		ol{
+			background: lightblue;
+		}
+		li{
+			margin: 10px 0;
+		}
+
+		.div1{
+			height: 300px;
+			background: red;
+			width: 300px;
+			display: inline-block;
+		}
+		.div2{
+			height: 300px;
+			background: blueviolet;
+			width: 300px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="div1">hello class</div>
+	<div class="div2">hello</div>
+
+	<ul>
+		<li>hello </li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ul>
+	<ol>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ol>
+	<div class="wrapper">
+		<div class="d1"></div>
+		<div class="d2"></div>
+		<div class="d3"></div>
+	</div>
+	<ul>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ul>
+	<ul>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ul>
+	<ol class="thisOl">
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ol>
+	<ol>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+		<li>hello</li>
+	</ol>
+</body>
+
+<script type="text/javascript">
+	// let a = 10;
+	// a = a++;
+	// a = a++;
+	// console.log(a++);
+
+	a = 10;
+
+	console.log(a + 10);
+
+	var a = 12;
+</script>
+
+
+</html>
+
+Q) What is the purpose of the Promise object in JavaScript?
+
+	A)	Promises are used for asynchronous programming. They represent a value that may be available now, 
+	or in the future, or never. Promises have three states: pending, fulfilled, and rejected.
+
+Q)Explain the difference between null and undefined in JavaScript.
+
+	A)	null is an assignment value representing the intentional absence of any object value. undefined is a primitive value automatically assigned to variables that have been declared but not initialized.
+
+Q) Diffrence between premitive and non-primitive
+Q) Explain hoisting in java sript
+Q) Immediately invoked function
+Q) Explain call(), apply() and bind()
+Q) Currying in java script
+Q) Explain Object.freeze()

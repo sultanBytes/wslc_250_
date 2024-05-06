@@ -1,0 +1,63 @@
+@media only screen and (max-width:1170px)
+{
+    .header .nav > ul > li{
+        font-size: 1vw;
+    }
+
+    .banner-form{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media only screen and (max-width:992px)
+{
+    .logo{
+        width: 140px;
+    }
+
+    .key-feature-section ul{
+        flex-direction: column;
+    }
+}
+
+
+@media only screen and (max-width:667px)
+{
+    .nav{
+        position: absolute;
+        top: 100%;
+        background-color: white;
+        left: 0;
+        width: 100%;
+        transition: 0.2s;
+        transform: scaleY(0);
+        transform-origin: top;
+        z-index: 9999;
+    }
+    .menu-bar{
+        display: block;
+        font-size: 30px;
+    }
+    .header .nav > ul{
+       flex-direction: column;
+        font-size: 16px;
+    }
+    .header .nav > ul > li{
+        font-size: 16px;
+        padding: 6px 10px;
+        /* border-bottom: 1px solid white; */
+    }
+
+    .menu-bar:hover ~ .nav{
+        border-top: 1px solid skyblue;
+        transform: scaleY(1);
+    }
+
+    .banner-form{
+        position: unset;
+        transform: unset;
+        width: 100%;
+    }
+    
+}

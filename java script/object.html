@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<form>
+		<input type="text" id="name" name="name" placeholder="Name">
+		<input type="text" id="age" name="age" placeholder="Age">
+		<input type="text" id="contact" name="contact" placeholder="Contact">
+		<button onclick="addData()" type="button">Submit</button>
+	</form>
+	<script type="">
+
+		
+
+		function addData(){
+			const p = document.getElementById('name').value;
+			const q = document.getElementById('age').value;
+			const r = document.getElementById('contact').value;
+
+			const userObj = createUser(p, q, r);
+
+			console.log(Object.keys(userObj));
+
+			
+		};
+
+
+		function createUser(x, y, z){
+			const a =  {
+				name: x,
+				age: y,
+				contact: z
+			};
+
+			return a;
+
+		};
+
+		// let p = 10;
+
+		// let q = p;
+
+		// q += 5;
+
+		// console.log(q)
+
+
+		// let x = {name:'john'};
+
+		// let y = x;
+
+		// y['age'] = 25;
+
+		// console.log(x);
+
+		// let x = {name:'john', age:25};
+
+		//let z = {...x}
+
+		// let {name, age} = x;
+
+		// let name = x.name;
+		// let age = x.age;
+
+		// let y = {
+		// 	name,
+		// 	age,
+		// 	contact:'test'
+		// };
+
+		// let y = Object.assign({}, x);
+
+		// y['age'] = 25;
+
+		// console.log(name,age, y)
+
+
+
+		// let obj = {name:'sultan'};
+
+		// obj.name = 'sultan';
+		// obj.contact = 'test@mail.com';
+
+		// obj['name'] = 'sultan';
+
+		// console.log(obj)
+
+		const x = {name:'john', age:25};
+		Object.freeze(x);
+
+		x.name = 'janny';
+		
+
+		console.log(x)
+
+		//events
+			// Mouse events
+			// keayboard events
+			// windowEvents
+	</script>
+</body>
+</html>
