@@ -55,6 +55,16 @@
 			left: 0;
 			background: rgba(0, 0, 0, 0.8);
 			display: none;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 100px;
+			color: black;
+			font-weight: 900;
+			-webkit-text-stroke:2px white;
+		}
+
+		.overlay div{
+			cursor: pointer;
 		}
 
 		.imageZoom span{
@@ -110,7 +120,10 @@
 	</div>
 
 
-	<div class="overlay"></div>
+	<div class="overlay">
+		<div><</div>
+		<div>></div>
+	</div>
 	<div class="imageZoom">
 		<img src="images/image05.avif">
 		<span>&times;</span>
@@ -122,18 +135,25 @@
 		const imageZoom = document.querySelector('.imageZoom');
 		const overlay = document.querySelector('.overlay');
 		const crossBtn = document.querySelector('.imageZoom span');
+		const prevBtn = document.querySelector('.overlay div:first-child');
+		const nextBtn = document.querySelector('.overlay div:last-child');
 
-		allImgs.forEach((abc)=>{
+		let currentImg;
+
+		allImgs.forEach((abc, i)=>{
 			abc.addEventListener('click', ()=>{
+
+				currentImg = i;
+
 				mainImg.src = abc.src;
 				imageZoom.style.transform = 'translate(-50%, -50%) scale(1)';
-				overlay.style.display = 'block';
+				overlay.style.display = 'flex';
 			})
 		});
 
 		overlay.addEventListener('click', ()=>{
-			imageZoom.style.transform = 'translate(-50%, -50%) scale(0)';
-			overlay.style.display = 'none';
+			// imageZoom.style.transform = 'translate(-50%, -50%) scale(0)';
+			// overlay.style.display = 'none';
 		})
 
 
@@ -142,6 +162,26 @@
 			overlay.style.display = 'none';
 		})
 
+
+		nextBtn.addEventListener('click', ()=>{
+			currentImg++;
+
+			if(currentImg >= allImgs.length) currentImg = 0
+
+			mainImg.src = allImgs[currentImg].src;
+		})
+
+
+		prevBtn.addEventListener('click', ()=>{
+			currentImg--;
+
+			if(currentImg < 0 ) 
+			{
+				currentImg = (allImgs.length - 1)
+			}
+
+			mainImg.src = allImgs[currentImg].src;
+		})
 	</script>
 </body>
 </html>

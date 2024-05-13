@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#resetAlarm{
+			display: none;
+		}
+
+		#stopAlarm{
+			display: none;
+		}
+
+		#snoozAlarm{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<input type="time" id="userTime" name="">
+	<button id="setAlarm">Set Alarm</button>
+	<button id="resetAlarm">Reset Alarm</button>
+
+	<button id="stopAlarm">Stop Alarm</button>
+
+	<button id="snoozAlarm">Snooz Alarm</button>
+
+	<script type="text/javascript">
+
+		const setAlarm = document.querySelector('#setAlarm');
+		const userTime = document.querySelector('#userTime');
+
+		const resetAlarm = document.querySelector('#resetAlarm');
+		const stopAlarm = document.querySelector('#stopAlarm');
+		const snoozAlarm = document.querySelector('#snoozAlarm');
+
+		let alarTimeout;
+				
+		const audio = new Audio('sample-6s.mp3');
+
+		const playAlarm = ()=>{
+			audio.loop = true;
+			audio.play();
+
+			stopAlarm.style.display = 'inline-block';
+			resetAlarm.style.display = 'none';
+			snoozAlarm.style.display = 'inline-block';
+		}
+
+		setAlarm.addEventListener('click', ()=>{
+			let alarmTime = userTime.value;
+
+			let now = new Date();
+			let alarmZone = new Date(now.toDateString() + ' ' + alarmTime);
+
+
+			let timeDiff = alarmZone - now;
+
+			setAlarm.style.display = 'none';
+			userTime.style.display = 'none';
+			resetAlarm.style.display = 'inline-block';
+			
+
+			alarTimeout = setTimeout(playAlarm, timeDiff);
+		});
+
+		resetAlarm.addEventListener('click',()=>{
+			clearTimeout(alarTimeout);
+
+			 userTime.value = '';
+
+			setAlarm.style.display = 'inline-block';
+			userTime.style.display = 'inline-block';
+			resetAlarm.style.display = 'none';
+		});
+
+
+		stopAlarm.addEventListener('click', ()=>{
+			audio.pause();
+			audio.currentTime = 0;
+
+			userTime.value = '';
+
+			setAlarm.style.display = 'inline-block';
+			userTime.style.display = 'inline-block';
+			stopAlarm.style.display = 'none';
+		})
+
+
+		snoozAlarm.addEventListener('click', ()=>{
+			let snoozTime = Number(prompt('Drop snooz time in seconds'));
+			snoozTime *= 1000;
+
+			audio.pause();
+			audio.currentTime = 0;
+
+			alarTimeout = setTimeout(playAlarm, snoozTime);
+		})
+	</script>
+</body>
+</html>

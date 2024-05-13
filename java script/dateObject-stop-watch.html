@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body{
+			height: 100vh;
+			display: grid;
+			place-items: center;
+			background-color: lightcyan;
+		}
+		.stop-watch{
+			background-color: whitesmoke;
+			box-shadow: 0 0 8px 2px lightgray;
+			padding: 10px;
+			border-radius: 6px;
+		}
+
+		.stop-watch > div:first-child{
+			font-size: 80px;
+			font-weight: bold;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.stop-watch button{
+			padding: 10px 20px;
+			background-color: lightblue;
+			color: black;
+			font-weight: bold;
+			font-size: 18px;
+			border-radius: 6px;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="stop-watch">
+		<div>00</div>
+		<div>
+			<button onclick="startCounter()">Start</button>
+			<button onclick="stopInterval()">Stop</button>
+			<button onclick="resetStopWatch()">Reset</button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+
+
+		const container = document.querySelector('.stop-watch > div:first-child');
+
+		let start;
+		let i = 1;
+
+		const counter = ()=>{
+			container.innerText = i;
+			i++;
+		}
+
+		const startCounter = ()=>{
+			start = setInterval(counter, 1000);
+		}
+
+
+		const stopInterval = ()=>{
+			clearInterval(start);
+		}
+
+		const resetStopWatch = ()=>{
+			clearInterval(start);
+			container.innerText = 0;
+			i = 1;
+		}
+		
+
+		// const currentDate = new Date();
+
+		// let date = currentDate.toDateString();
+		// let hours = currentDate.getHours();
+		// let minute = currentDate.getMinutes();
+		// let second = currentDate.getSeconds();
+
+		// console.log(date, hours, minute, second)
+
+
+		// const loadData = ()=>{
+		// 	console.log('loadData');
+		// };
+
+
+		// setInterval(loadData, 1000);
+	</script>
+</body>
+</html>

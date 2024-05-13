@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+		}
+
+		.tab-content{
+			display: none;
+		}
+
+		.tab{
+			width: 1170px;
+			margin: auto;
+			box-shadow:0 0 6px 2px lightgray;
+		}
+
+		.tab-head{
+			padding: 20px 10px 10px 0;
+			border-bottom: 1px solid lightblue;
+		}
+
+		.tab-head button{
+			padding: 10px 20px;
+			background: black;
+			color: cyan;
+			border: 1px solid black;
+			font-size: 18px;
+			font-weight: bold;
+			margin-left: 10px;
+			border-radius: 8px 8px 0 0;
+			cursor: pointer;
+		}
+
+		.tab-body{
+			height: 200px;
+			font-size: 20px;
+			font-weight: 600;
+			display: grid;
+			place-items: center;
+		}
+
+		.active{
+			background: cyan !important;
+			color: black !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<div class="tab-head">
+			<button class="active">Tab 1</button>
+			<button>Tab 2</button>
+			<button>Tab 3</button>
+			<button>Tab 4</button>
+			<button>Tab 5</button>
+			<button>Tab 6</button>
+		</div>
+		<div class="tab-body">
+			Content of tab 1
+		</div>
+		<div class="tab-content">
+			<div>Content of tab 1</div>
+			<div>Content of tab 2</div>
+			<div>Content of tab 3</div>
+			<div>Content of tab 4</div>
+			<div>Content of tab 5</div>
+			<div>Content of tab 6</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const tabBtns = document.querySelectorAll('.tab-head button');
+		const content = document.querySelectorAll('.tab-content > div');
+
+		const tBody = document.querySelector('.tab-body');
+
+		tabBtns.forEach((btn, btnI)=>{
+
+
+
+			btn.addEventListener('click', ()=>{
+				tBody.innerHTML = content[btnI].innerText;
+
+
+				tabBtns.forEach((btns)=>{
+					btns.classList.remove('active');
+				});
+
+
+				btn.classList.add('active');
+			})
+			
+		})
+	</script>
+</body>
+</html>

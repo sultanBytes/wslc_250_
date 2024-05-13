@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section{
+            height: 80vh;
+            border: 10px solid red;
+
+        }
+
+        #main_section{
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+            -webkit-text-stroke: 2px black;
+            color: red;
+        }
+
+        h1{
+            transition: 1s;
+        }
+
+        #main_section h1:first-child{
+            transform: translate(-1000px);
+        }
+
+        #main_section h1:last-child{
+            transform: translate(1000px);
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section id="main_section">
+       <div>
+        <h1>HEADING 1</h1>
+        <h1>HEADING 2</h1>
+       </div>
+    </section>
+    <section></section>
+    <section></section>
+
+    <script>
+        const active = ()=>{
+            console.log('reached')
+        }
+
+        const headings = document.querySelectorAll('#main_section h1');
+        const theDiv = document.querySelector('#main_section');
+        const distance = theDiv.offsetTop;
+
+        const windowH = window.innerHeight;
+        // const window = window.innerWidth;
+
+
+        window.addEventListener('scroll', ()=>{
+           const scrollCount = window.pageYOffset || document.documentElement.scrollTop;
+
+        //    const scroll = document.documentElement.scrollTop;
+
+        //    console.log(scrollCount , scroll)
+
+           if(scrollCount > (distance - (windowH / 2))){
+            active();
+
+            headings.forEach((el)=>{
+                el.style.transform = 'translate(0)';
+            })
+           }
+
+        })
+    </script>
+</body>
+</html>
