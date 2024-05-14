@@ -1,48 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<style type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
 		*{
 			margin: 0;
 			padding: 0;
+			box-sizing: border-box;
 		}
 
 		body{
-			height: 100vh;
-			display: grid;
-			place-items: center;
-			background-color: ghostwhite;
+			overflow-x: hidden;
+		}
+		section{
+			height: 80vh;
+			border: 5px solid olive;
+
 		}
 
-		.container{
-			width: 600px;
-			height: 500px;
-			background: olive;
+		#main{
 			display: grid;
 			place-items: center;
 		}
 
-		.inner{
-			width: 300px;
-			height: 250px;
-			background: lightsalmon;
+		#main h1{
+			font-size: 60px;
+			text-align: center;
+			text-transform: capitalize;
+			/* transition: 0.4s; */
 		}
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="inner"></div>
-	</div>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section></section>
+	<section id="main">
+		<div>
+			<h1>hello</h1>
+			<h1>World</h1>
+		</div>
+	</section>
+	<section></section>
+	<section></section>
 
-	<script type="text/javascript">
-		const inner = document.querySelector('.inner');
+	<script>
+		const mainDiv = document.querySelector('#main');
+		const mainH1 = document.querySelectorAll('#main h1');
 
-        const data = inner.getBoundingClientRect();
+		const wHeight = window.innerHeight;
 
-        console.log(data)
+		window.addEventListener('scroll', ()=>{
+			const distance = mainDiv.getBoundingClientRect().top;
+			
+
+			if(distance < wHeight * 0.5)
+			{
+				mainH1[0].style.transform = `translate(${-distance}px)`;
+				mainH1[1].style.transform = `translate(${distance}px)`;
+			}
+		})
 	</script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log(1);
+        console.log(2);
+
+        setTimeout(()=>{
+            console.log(3)
+        }, 5000000);
+
+        console.log(4);
+
+        //pending, resolve, reject
+
+
+        // let a = 10;
+
+        // let b;
+
+
+        // setTimeout(()=>{
+        //     b = 12;
+        // }, 500);
+
+
+        // console.log(a + b);
+
+    //     let a = 8;
+
+    //    const delay = new Promise((resolve, reject)=>{
+    //         setTimeout(()=>{
+    //             b = 12;
+
+    //             resolve(b)
+    //         }, 500);
+    //     });
+
+    //     delay.then((b)=>{
+    //         console.log(a + b)
+    //     })
+
+        // const prm = async()=>{
+        //     let a = 8;
+        //     let b;
+
+
+        //    await new Promise((resolve)=>{
+        //         setTimeout(()=>{
+        //             b = 12;
+
+        //             resolve(b);
+        //         },5000)
+        //     })
+
+        //     console.log(a + b)
+        // };
+        
+        // prm();
+
+
+        const showdata = async()=>{
+            const res = await fetch('https://dummyjson.com/products');
+
+            console.log(res)
+        };
+
+        showdata();
+    </script>
+</body>
+</html>
