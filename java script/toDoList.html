@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -13,10 +14,11 @@
             font-family: sans-serif;
         }
 
-        body{
+        body {
             background-color: lightcoral;
         }
-        .container{
+
+        .container {
             width: 500px;
             box-shadow: 0 0 8px 2px lightgray;
             margin: auto;
@@ -24,20 +26,20 @@
             border-radius: 8px;
             background-color: white;
         }
-        
-        .user{
+
+        .user {
             display: grid;
             grid-template-columns: 5fr 1fr;
             gap: 10px;
         }
 
-        .user input{
+        .user input {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid black;
         }
 
-        .user button{
+        .user button {
             background-color: cadetblue;
             border: none;
             border-radius: 4px;
@@ -47,14 +49,15 @@
         .task-list {
             margin-top: 20px;
         }
-        .task-list li{
+
+        .task-list li {
             border-bottom: 1px solid lightgray;
             display: grid;
             grid-template-columns: 1fr 8fr 2fr;
             padding: 10px 0;
         }
 
-        .task-list li button{
+        .task-list li button {
             background-color: red;
             border-radius: 2px;
             border: none;
@@ -63,12 +66,13 @@
             cursor: pointer;
         }
 
-        .inactive span{
+        .inactive span {
             text-decoration: line-through;
             color: grey;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -96,29 +100,119 @@
         </ul>
     </div>
 
-
     <script>
-        const checkbox = document.querySelectorAll('.task-list input[type="checkbox"]');
+        const addBtn = document.querySelector('.user button');
+        const userInp = document.querySelector('.user input[type="text"]');
+        const taskList = document.querySelector('.task-list');
+
+        const taskArr = JSON.parse(localStorage.getItem('wslc_250_to_do')) || [];
+
+        let lastId = 0;
+
+        if (taskArr.length != 0) {
+            lastId = taskArr[taskArr.length - 1].id;
+        }
+
+        // console.log(lastId);
+
+
+
+        // console.log(taskArr[taskArr.length - 1].id)
+
+        addBtn.addEventListener('click', () => {
+            const userVal = userInp.value;
+
+
+
+            if (userVal) {
+                const taskObj = {
+                    id: ++lastId,
+                    task: userVal,
+                    status: true
+                };
+
+
+                taskArr.push(taskObj);
+
+                const jsonTask = JSON.stringify(taskArr);
+
+
+                localStorage.setItem('wslc_250_to_do', jsonTask);
+
+
+
+
+            }
+            else {
+                alert('Please fill input');
+            };
+
+
+            showData();
+
+        });
+
+        const showData = () => {
+            const taskArrToShow = JSON.parse(localStorage.getItem('wslc_250_to_do')) || [];
+
+            taskList.innerHTML = '';
+
+            taskArrToShow.forEach((obj) => {
+                const newLi = document.createElement('li');
+                const newInp = document.createElement('input');
+                newInp.type = "checkbox";
+                newInp.value = obj.id;
+                newInp.checked = obj.status;
+
+                newInp.addEventListener('click', () => {
+                    if (newInp.checked) {
+                        newLi.classList.add('inactive');
+                    }
+                    else {
+                        newLi.classList.remove('inactive');
+                    }
+                });
+
+                const newSpan = document.createElement('span');
+                const newBtn = document.createElement('button');
+
+                newSpan.innerText = obj.task;
+                newBtn.innerText = 'Delete';
+
+                newLi.appendChild(newInp);
+                newLi.appendChild(newSpan);
+                newLi.appendChild(newBtn);
+
+                console.log(newLi);
+
+                taskList.appendChild(newLi);
+            })
+        };
+
+        showData();
+    </script>
+    <!-- <script>
+        // const checkbox = document.querySelectorAll('.task-list input[type="checkbox"]');
         const addBtn = document.querySelector('.user button');
         const userInp = document.querySelector('.user input[type="text"]');
         const taskList = document.querySelector('.task-list');
 
 
-        console.log(checkbox)
-        checkbox.forEach((inp)=>{
-            inp.addEventListener('click',()=>{
-                const li = inp.parentNode;
+        // console.log(checkbox)
+        // checkbox.forEach((inp)=>{
+        //     inp.addEventListener('click',()=>{
+        //         const li = inp.parentNode;
 
-                if(inp.checked)
-                {
-                    li.classList.add('inactive');
-                }
-                else
-                {
-                    li.classList.remove('inactive');
-                }
-            })
-        });
+        //         if(inp.checked)
+        //         {
+        //             li.classList.add('inactive');
+        //         }
+        //         else
+        //         {
+        //             li.classList.remove('inactive');
+        //         }
+        //     })
+        // });
 
 
         addBtn.addEventListener('click', ()=>{
@@ -129,6 +223,17 @@
                 const newLi = document.createElement('li');
                 const newInp = document.createElement('input');
                 newInp.type = "checkbox";
+
+                newInp.addEventListener('click', ()=>{
+                    if(newInp.checked)
+                    {
+                        newLi.classList.add('inactive');
+                    }
+                    else
+                    {
+                        newLi.classList.remove('inactive');
+                    }
+                })
 
                 const newSpan = document.createElement('span');
                 const newBtn = document.createElement('button');
@@ -151,7 +256,13 @@
                 alert('Please fill input');
             }
             
-        })
-    </script>
+        });
+
+
+        // document.addEventListener('onLoadContent', ()=>{
+        //     console.log('first')
+        // })
+    </script> -->
 </body>
+
 </html>
