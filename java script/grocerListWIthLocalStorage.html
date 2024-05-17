@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grocery List</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			list-style: none;
+		}
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		.main {
+			height: 100vh;
+			background: white;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.features {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		.features > div {
+			width: 50%;
+		}
+		.input {
+			display: flex;
+		}
+		.input input[type="text"] {
+			width: 80%;
+			padding: 15px;
+			border: 2px solid black;
+			border-radius: 6px;
+			margin-right: 10px;
+			font-size: 16px;
+			outline: none;
+		}
+		.input button {
+			padding: 15px;
+			border: 2px solid black;
+			background: skyblue;
+			border-radius: 4px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.input button:hover {
+			border: 2px solid skyblue;
+			background: white;
+		}
+		.btns {
+			display: flex;
+			align-items: center;
+		}
+		.btns button {
+			flex: 1;
+			padding: 15px;
+			border: 2px solid black;
+			background: red;
+			color: white;
+			border-radius: 4px;
+			font-size: 16px;
+			font-weight: bold;
+			margin: 0 10px;
+			cursor: pointer;
+		}
+		.btns button:hover {
+			border: 2px solid red;
+			color: red;
+			background: white;
+		}
+		.oprBtn {
+			padding: 30px 0;
+			display: flex;
+			justify-content: center;
+		}
+		.oprBtn button {
+			padding: 15px;
+			border: 2px solid black;
+			background: skyblue;
+			border-radius: 4px;
+			font-size: 16px;
+			font-weight: bold;
+			margin: 0px 10px;
+			cursor: pointer;
+		}
+		.oprBtn button:hover {
+			border: 2px solid skyblue;
+			background: white;
+		}
+		.list{
+			overflow-y: scroll;
+			border: 2px solid black;
+			border-radius: 6px;
+			padding: 20px;
+			height: 100%;
+		}
+		.list::-webkit-scrollbar{
+			width: 4px;
+		}
+		.list::-webkit-scrollbar-track {
+			background: white;
+			padding-right: 5px;
+		}
+		.list::-webkit-scrollbar-thumb {
+			background: red;
+			border-radius: 3px;
+		}
+		.list ul{
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+		}
+		.list ul li{
+			width: 22%;
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 1px solid skyblue;
+			padding: 10px 0;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.list ul li button{
+			cursor: pointer;
+			background: red;
+			border-radius: 4px;
+			border: 2px solid red;
+			padding: 4px 8px;
+			color: white;
+		}
+		.list ul li button:hover{
+			background: white;
+			color: red;
+		}
+		.main>h1{
+			text-align: center;
+			padding-bottom: 20px;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1>GROCERY LIST</h1>
+		<div class="features">
+			<div class="input">
+				<input type="text" placeholder="Add a task..." name="" id="taskInp">
+				<button onclick="taskAdd()">Add Task</button>
+			</div>
+			<div class="btns">
+				<button onclick="deleteAllData()">Delete All Items</button>
+				<button onclick="deleteCheckedItem()">Delete Checked Item</button>
+			</div>
+		</div>
+		<div class="list">
+			<ul>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+				<li>
+					<input type="checkbox" name="">
+					item 01
+					<button>Delete</button>
+				</li>
+			</ul>
+		</div>
+		<div class="oprBtn">
+			<button onclick="showData('all')">Total Items - 00</button>
+			<button onclick="showData('perchasedOnly')">Purchased Item - 00</button>
+			<button onclick="showData('remainingOnly')">Remaining Items - 00</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	const listUl = document.querySelector('.list ul');
+	const buttons = document.querySelectorAll('.oprBtn button');
+	const taskInput = document.getElementById('taskInp');
+
+	const taskAdd = ()=>{
+		let newItem = taskInput.value;
+		if(newItem!= ''){
+			let newArr = JSON.parse(localStorage.getItem('groceryData')) ?? [];
+			let lastId = 0;
+
+			if(newArr.length != 0){
+				lastId = newArr[0].id;
+				lastId++;
+			}
+
+			let newObj = {
+				id : lastId,
+				task : newItem,
+				ifChecked : false
+			};
+
+			newArr.unshift(newObj);
+			localStorage.setItem('groceryData',JSON.stringify(newArr));
+			taskInput.value = '';
+			showData('all');
+		}
+
+	};
+
+	const showData = (dataFilter)=>{
+		
+		let filterDataToShow = dataFilter;
+
+
+		let newArr = JSON.parse(localStorage.getItem('groceryData')) ?? [];
+		const checkedArr = newArr.filter(obj => obj.ifChecked === true);
+		const unCheckedArr = newArr.filter(obj => obj.ifChecked !== true);
+
+
+		listUl.innerHTML = '';
+		let totalData = newArr.length;
+		let purachasedItems = checkedArr.length;
+
+		if(filterDataToShow == 'perchasedOnly'){
+			newArr = checkedArr;
+		}else if(filterDataToShow == 'remainingOnly'){
+			newArr = unCheckedArr;
+		}
+
+		newArr.forEach((item)=>{
+			let newLi = document.createElement('li');
+			let newCheckBox = document.createElement('input');
+			newCheckBox.type = 'checkbox';
+			newCheckBox.value = item.id;
+
+			if(item.ifChecked == true){
+				newCheckBox.checked = true;
+			}
+
+			newCheckBox.onclick = function(){
+				let dataArr = JSON.parse(localStorage.getItem('groceryData')) ?? [];
+				let dataId = newCheckBox.value;
+				let foundData = dataArr.find((el)=> el.id == dataId);
+				
+				if(foundData.ifChecked == true){
+					foundData.ifChecked = false;
+				}else{
+					foundData.ifChecked = true;
+				}
+
+				localStorage.setItem('groceryData',JSON.stringify(dataArr));
+
+				showData('all');
+			};
+
+			newLi.appendChild(newCheckBox);
+			
+			let newSpan = document.createElement('span');
+			newSpan.innerText = item.task;
+
+			if(item.ifChecked == true){
+				newSpan.style.textDecoration = 'line-through';
+				newSpan.style.color = 'grey';
+
+			}
+			newLi.appendChild(newSpan);
+
+			let newBtn = document.createElement('button');
+			newBtn.innerText = 'Delete';
+
+			newBtn.onclick = function(){
+				let newArrAll = JSON.parse(localStorage.getItem('groceryData')) ?? [];
+				newArrAll.forEach((itemObj,ind)=>{
+					if(itemObj.id == item.id){
+						newArrAll.splice(ind,1);
+					}
+
+					localStorage.setItem('groceryData',JSON.stringify(newArrAll));
+					showData('all');
+				});
+			};
+
+			newLi.appendChild(newBtn)
+
+			listUl.appendChild(newLi);
+			
+		})
+
+		buttons[0].innerHTML = `Total Items - ${totalData}`;
+		buttons[1].innerHTML = `Purachased Items - ${purachasedItems}`;
+		buttons[2].innerHTML = `Remaining Items - ${totalData - purachasedItems}`;
+	};
+
+	showData('all');
+
+	const deleteCheckedItem = ()=>{
+		let dataArr = JSON.parse(localStorage.getItem('groceryData')) ?? [];
+		let filterArr = dataArr.filter(allItems => allItems.ifChecked === false);
+
+		localStorage.setItem('groceryData',JSON.stringify(filterArr));
+		showData('all');
+	};
+
+
+	const deleteAllData = ()=>{
+		localStorage.clear('groceryData');
+		showData('all');
+	}
+</script>
+</html>
+
+
+<!-- /* Customize the scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+/* Customize the scrollbar track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+  background: black; /* Set the background color of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Set the color of the scrollbar thumb */
+  border-radius: 3px; /* Add some rounded corners to the thumb */
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #333; /* Change the color on hover */
+} -->

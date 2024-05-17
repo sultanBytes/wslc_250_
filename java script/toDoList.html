@@ -128,7 +128,7 @@
                 const taskObj = {
                     id: ++lastId,
                     task: userVal,
-                    status: true
+                    status: false
                 };
 
 
@@ -164,13 +164,46 @@
                 newInp.value = obj.id;
                 newInp.checked = obj.status;
 
+
+
+                if(obj.status)
+                {
+                    newLi.classList.add('inactive');
+                }
+                
+
                 newInp.addEventListener('click', () => {
-                    if (newInp.checked) {
-                        newLi.classList.add('inactive');
+                    const arrToHandleStatus = JSON.parse(localStorage.getItem('wslc_250_to_do')) || [];
+                    // let index;
+                    // arrToHandleStatus.forEach((val, i)=>{
+                    //     if(val.id == obj.id)
+                    //     {
+                    //         index = i;
+                    //     }
+                    // });
+
+                    let index = arrToHandleStatus.findIndex((taskData)=> taskData.id === obj.id);
+
+                    if(arrToHandleStatus[index].status)
+                    {
+                        arrToHandleStatus[index].status = false
                     }
-                    else {
-                        newLi.classList.remove('inactive');
+                    else
+                    {
+                        arrToHandleStatus[index].status = true
                     }
+
+                    localStorage.setItem('wslc_250_to_do', JSON.stringify(arrToHandleStatus));
+
+                    showData();
+
+                    
+                    // if (newInp.checked) {
+                    //     newLi.classList.add('inactive');
+                    // }
+                    // else {
+                    //     newLi.classList.remove('inactive');
+                    // }
                 });
 
                 const newSpan = document.createElement('span');
@@ -179,11 +212,28 @@
                 newSpan.innerText = obj.task;
                 newBtn.innerText = 'Delete';
 
+                newBtn.addEventListener('click', ()=>{
+                    // let conf = confirm('Are you sure to delete ?')
+
+                    if(confirm('Are you sure to delete ?')){
+                        const taskToDelete = JSON.parse(localStorage.getItem('wslc_250_to_do')) || [];
+
+                        let indexToDelete = taskToDelete.findIndex((dataD)=> dataD.id === obj.id);
+
+                        taskToDelete.splice(indexToDelete, 1);
+
+                        localStorage.setItem('wslc_250_to_do', JSON.stringify(taskToDelete));
+                    }
+
+                    showData();
+                    
+                })
+
                 newLi.appendChild(newInp);
                 newLi.appendChild(newSpan);
                 newLi.appendChild(newBtn);
 
-                console.log(newLi);
+                // console.log(newLi);
 
                 taskList.appendChild(newLi);
             })
