@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        main{
+            width: 1320px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+           
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 20px 0;
+            gap: 20px;
+        }
+
+        img{
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .card h3{
+            text-transform: capitalize;
+        }
+
+        .card ul li{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid lightgray;
+            padding: 6px 0;
+        }
+
+        .card ul li span{
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .card h3{
+            font-size: 24px;
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        .card p{
+            font-size: 20px;
+        }
+
+        .card button{
+            width: 100%;
+            margin: 10px 0;
+            background-color: aqua;
+            padding: 10px 0;
+            border: 1px solid aqua;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .card button:hover{
+            border: 1px solid black;
+            
+        }
+
+        .card{
+            border: 1px solid lightcyan;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="filter"></div>
+       <div class="container">
+        <!-- <div class="card">
+            <div class="thumbnail">
+                <img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="">
+            </div>
+            <h3>iPhone 9</h3>
+            <p>
+                An apple mobile which is nothing like apple
+            </p>
+            <ul>
+                <li>
+                    price <span>549</span>
+                </li>
+                <li>
+                    discountPercentage <span>12.96</span>
+                </li>
+                <li>
+                    rating <span>4.69</span>
+                </li>
+                <li>
+                    brand <span>Apple</span>
+                </li>
+                <li>
+                    category <span>smartphones</span>
+                </li>
+
+                <div>
+                    <button>Add to cart</button>
+                </div>
+            </ul>
+        </div> -->
+        
+        
+       </div>
+    </main>
+
+    <script>
+        const container = document.querySelector('.container');
+
+        const showData = async()=>{
+            let products =await fetch('https://dummyjson.com/products?limit=100');
+            products = await products.json();
+            products = products.products;
+
+            console.log(products);
+            container.innerHTML = "";
+            products.map(()=>{
+                container.innerHTML += `<div class="card">
+            <div class="thumbnail">
+                <img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="">
+            </div>
+            <h3>iPhone 9</h3>
+            <p>
+                An apple mobile which is nothing like apple
+            </p>
+            <ul>
+                <li>
+                    price <span>549</span>
+                </li>
+                <li>
+                    discountPercentage <span>12.96</span>
+                </li>
+                <li>
+                    rating <span>4.69</span>
+                </li>
+                <li>
+                    brand <span>Apple</span>
+                </li>
+                <li>
+                    category <span>smartphones</span>
+                </li>
+
+                <div>
+                    <button>Add to cart</button>
+                </div>
+            </ul>
+        </div>`
+            });
+        };
+
+        showData();
+    </script>
+</body>
+</html>
