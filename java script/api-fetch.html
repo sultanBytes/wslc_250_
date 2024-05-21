@@ -22,10 +22,23 @@
         }
 
         .container{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            padding: 20px 0;
-            gap: 20px;
+            /* display: grid; */
+            /* grid-template-columns: repeat(4, 1fr) !important; */
+            /* padding: 20px 0; */
+            /* gap: 20px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .card{
+            width: 23%;
+            margin-top: 10px;
+            box-shadow: 0 0 6px 3px lightgray;
+        }
+
+        .thumbnail{
+            width: 100%;
         }
 
         img{
@@ -80,11 +93,20 @@
             border: 1px solid lightcyan;
             padding: 10px;
         }
+
+        .filter{
+            padding: 20px 0;
+        }
     </style>
 </head>
 <body>
     <main>
-        <div class="filter"></div>
+        <div class="filter">
+            <div class="categories">
+                <h3>categories</h3>
+                <ul></ul>
+            </div>
+        </div>
        <div class="container">
         <!-- <div class="card">
             <div class="thumbnail">
@@ -123,38 +145,71 @@
 
     <script>
         const container = document.querySelector('.container');
+        const catContainer = document.querySelector('.categories ul');
+        let allDataProducts;
 
-        const showData = async()=>{
+        const fetchData = async()=>{
             let products =await fetch('https://dummyjson.com/products?limit=100');
             products = await products.json();
             products = products.products;
 
-            console.log(products);
+            allDataProducts = products;
+
+            let cats = [];
+
+            products.forEach((el)=>{
+
+                if(!cats.includes(el.category))
+                {
+                    cats.push(el.category);
+                }
+            });
+
+
+            let newLi = '';
+            cats.map((el)=>{
+                newLi += `<li>
+                        <input onclick="checkCat(this)" type="checkbox" value="${el}">
+                        <span>${el}</span>
+                    </li>`;
+
+            });
+
+            catContainer.innerHTML = newLi;
+
+
+
+            showData(products);
+
+           
+        };
+
+        const showData = (products)=>{
             container.innerHTML = "";
-            products.map(()=>{
+            products.map((product)=>{
                 container.innerHTML += `<div class="card">
             <div class="thumbnail">
-                <img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="">
+                <img src="${product.thumbnail}" alt="">
             </div>
-            <h3>iPhone 9</h3>
+            <h3>${product.title}</h3>
             <p>
-                An apple mobile which is nothing like apple
+                ${product.description}
             </p>
             <ul>
                 <li>
-                    price <span>549</span>
+                    price <span>${product.price}</span>
                 </li>
                 <li>
-                    discountPercentage <span>12.96</span>
+                    discountPercentage <span>${product.discountPercentage}</span>
                 </li>
                 <li>
-                    rating <span>4.69</span>
+                    rating <span>${product.rating}</span>
                 </li>
                 <li>
-                    brand <span>Apple</span>
+                    brand <span>${product.brand}</span>
                 </li>
                 <li>
-                    category <span>smartphones</span>
+                    category <span>${product.category}</span>
                 </li>
 
                 <div>
@@ -165,7 +220,41 @@
             });
         };
 
-        showData();
+        fetchData();
+
+        const checkCat = (checkInp)=>{
+            const allCheckbox = document.querySelectorAll('.categories ul input[type="checkbox"]');
+            const checkedCat = []
+            allCheckbox.forEach((el)=>{
+                if(el.checked){
+                    checkedCat.push(el.value)
+                }
+            });
+
+
+            let selectedProducts = [];
+
+            console.log(checkedCat)
+
+            if(checkedCat.length > 0)
+            {
+                allDataProducts.forEach((pro)=>{
+
+                    console.log(pro.category)
+                    if(checkedCat.includes(pro.category))
+                    {
+                        selectedProducts.push(pro);
+                    }
+                });
+
+                showData(selectedProducts);
+                // console.log(selectedProducts)
+            }
+            else
+            {
+                showData(allDataProducts);
+            }
+        };
     </script>
 </body>
 </html>
