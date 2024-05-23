@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.celebration-wear-men{
+    padding: 20px 0;
+}
+
+.celebration-wear-men h1{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(46, 46, 45);
+}
+
+.heading-img{
+    text-align: center;
+    padding: 15px 0;
+}
+
+.celebration-wear-men p{
+    color: rgb(114, 114, 114);
+    font-weight: 400;
+    text-align: center;
+}
+
+.container{
+    padding: 20px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.inner{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.card{
+    position: relative;
+}
+.card-img{
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-img:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.card-img:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    transition: 0.3s 0.2s;
+}
+
+.card-img:hover::before,
+.card-img:hover::after{
+    transform: scale(1);
+}
+
+.card-details{
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+}
+
+.card-details h6{
+    text-transform: capitalize;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(46, 46, 45);
+}
+
+.card-details button{
+    font-size: 14px;
+    font-weight: 500;
+    background-color: white;
+   cursor: pointer;
+    padding: 4px 8px;
+    border: 2px solid rgb(183, 135, 35);
+    margin-top: 12px;
+    width: 100px;
+    height: 35px;
+    position: relative;
+}
+
+.card-details button span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    color: white;
+    line-height: 33px;
+}
+
+.card-details button:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(183, 135, 35);
+    transform: scaleX(1);
+    transform-origin: center;
+    transition: 0.4s;
+}   
+
+.card-details button:hover::before{
+    transform: scaleX(0);
+}
+
+.card-details button:hover span{
+    color: rgb(183, 135, 35);
+}
