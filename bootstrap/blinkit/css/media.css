@@ -1,0 +1,23 @@
+@media only screen and (max-width: 1200px){
+    .header-form{
+        width: 600px !important;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .dropdown-menu{
+        width:unset;
+    }
+
+    .header-form{
+        width: unset;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .dropdown-toggle::after{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+}

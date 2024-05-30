@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <header class="bg-white position-sticky top-0">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <header class="bg-white position-sticky top-0 px-4 border-bottom">
+        <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand border-lg-end" href="#">
                     <img class="logo"
                         src="https://www.thehealthfactory.in/cdn/shop/files/BLINKIT_876a5ffa-38b0-4f7b-8c54-0c3b56d69c38.png"
                         alt="">
@@ -39,21 +39,25 @@
                                     <span class="fs-6 text"> Honda Chowk, Sector 33, Gurug</span>
                                 </button>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <ul class="dropdown-menu p-3 rounded-0">
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <div class="delivery-drop-down">
+                                        <h5>Change Location</h5>
+                                        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+                                            <button class="rounded border bg-success text-white py-2 px-3">Detect my location</button>
+                                            <span>OR</span>
+                                            <input type="text" class="border rounded py-2 px-1" placeholder="search delivery location">
+                                        </div>
+                                    </div>
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="header-form" role="search">
+                        <div class="position-relative">
+                            <input class="form-control me-2 py-2 px-5" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                        <button class="bg-transparent py-2 border-0 my-4 my-lg-0">Login</button>
                         <button class="btn btn-outline-success bg-success text-white" type="submit">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span>My Cart</span>
@@ -63,6 +67,33 @@
             </div>
         </nav>
     </header>
+
+    <main>
+        <section class="banner">
+            <div class="container">
+                <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg" alt="" class="w-100">
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <div class="container">
+                <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-1">
+                    <div class="col mt-3 mt-lg-0">
+                        <img class="w-100" src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="">
+                    </div>
+                    <div class="col mt-3 mt-lg-0">
+                        <img class="w-100" src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="">
+                    </div>
+                    <div class="col mt-3 mt-lg-0">
+                        <img class="w-100" src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="">
+                    </div>
+                    <div class="col mt-3 mt-lg-0">
+                        <img class="w-100" src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
 
