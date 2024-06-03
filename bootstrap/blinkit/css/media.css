@@ -10,7 +10,7 @@
     }
 
     .header-form{
-        width: unset;
+        width: unset !important;
         display: grid;
         grid-template-columns: 1fr;
     }
