@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '992px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
+                },
+                extend: {
+                    screens:{
+                        'sachin' : '300px',
+                        'custom': '700px'
+                    },
+                    colors: {
+                        clifford: '#da373d',
+                        sultan: 'rgb(1222,245,154)'
+                    },
+                    keyframes:{
+                        colorChange:{
+                            '0%' :{backgroundColor : 'red'},
+                            '25%' :{backgroundColor : 'yellow'},
+                            '50%' :{backgroundColor : 'green'},
+                            '100%' :{backgroundColor : 'blue'}
+                        },
+                        textChange:{
+                            '0%' :{fontSize : '20px'},
+                            '25%' :{fontSize : '10px'},
+                            '50%' :{fontSize : '25px'},
+                            '100%' :{fontSize : '20px'}
+                        }
+                    },
+                    animation:{
+                        'color-change': 'colorChange 1s linear infinite',
+                        'text-change': 'textChange 1s linear infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .main{
+                background-color: red;
+                border: 1px solid white;
+                color: aqua;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container animate-[colorChange_1s_linear_infinite] text-center sachin:text-[red] custom:text-[magenta]">hello</div> -->
+    <!-- <div class="container bg-red-600 group text-center sachin:text-[red] custom:text-[magenta] p-5">
+        <div class="p-[5px_10px] bg-[blue] group-hover:bg-[hotpink]">hello</div>
+    </div> -->
+
+
+    <div class="container bg-[olive] text-[white] text-center p-[50px]">
+        <ul class="main">
+            <li>hello 1</li>
+            <li>hello 2</li>
+            <li>hello 3</li>
+            <li>hello 4</li>
+            <li>hello 5</li>
+            <li>hello 6</li>
+        </ul>
+    </div>
+</body>
+
+</html>
