@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{
+            height: 60vh;
+            background-color: red;
+        }
+        .main2{
+            height: 60vh;
+            display: grid;
+            place-items: center;
+        }
+
+        body::-webkit-scrollbar{
+            width: 8px;
+        }
+
+        body::-webkit-scrollbar-track{
+            background-color: blue;
+        }
+
+        body::-webkit-scrollbar-thumb{
+            background-color: yellow;
+        }
+
+        body::-webkit-scrollbar-thumb:hover{
+            background-color: green;
+        }
+
+        body::-webkit-scrollbar-corner{
+            border-radius: 4px;
+            background-color: black;
+        }
+
+        .main2 div{
+            background-color: aqua;
+            height: 38vh;
+            width: 600px;
+            font-size: 18px;
+            overflow-y: scroll;
+        }
+        .main2 div::-webkit-scrollbar{
+            width: 4px;
+            display: none;
+        }
+
+        .main2 div::-webkit-scrollbar-track{
+            background-color: blue;
+        }
+
+        .main2 div::-webkit-scrollbar-thumb{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div data-name="sultan" data-info="div 1" class="d1">hello</div>
+
+    <div class="main"></div>
+    <div class="main2">
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deserunt sint cupiditate. Eius, voluptate. Inventore tempora totam explicabo nesciunt. Vel officiis vero atque nostrum praesentium qui similique in reprehenderit architecto!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus ex provident id sed et sint officiis, voluptas odio. Sit explicabo eligendi voluptas et praesentium modi ad pariatur quam error sunt!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim sint alias dolorem ipsum eos amet voluptas iure, quia neque dicta repudiandae cupiditate cumque odit ex tempora dolores deleniti eum. Veniam?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque architecto impedit consequuntur, illo nemo placeat deleniti commodi voluptates asperiores perferendis in totam illum, nam adipisci soluta minima dicta molestias laborum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto temporibus eum, reiciendis perspiciatis ratione adipisci quis! Rem, dicta odio delectus maiores saepe cupiditate nulla molestiae minima? Quasi aut inventore <dolores class="lo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam recusandae saepe id laboriosam sequi magnam ab adipisci laborum autem ipsam architecto fugiat dolore ad unde, quia rem expedita assumenda animi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse id laboriosam voluptatum numquam provident excepturi vero, asperiores sapiente! Expedita recusandae dignissimos atque facilis ipsam blanditiis numquam at eaque id.</dolores>
+            </p>
+        </div>
+    </div>
+    <div class="main"></div>
+    <div class="main2"></div>
+    <div class="main"></div>
+    <div class="main2"></div>
+    <div class="main"></div>
+    <div class="main2"></div>
+    <div class="main"></div>
+    <div class="main2"></div>
+
+
+    <script>
+        const container = document.querySelector('.d1');
+
+        const data = container.dataset;
+
+        console.log(data);
+
+        const name = data.name;
+        const info = data.info;
+
+        console.log(name);
+        console.log(info);
+    </script>
+</body>
+</html>

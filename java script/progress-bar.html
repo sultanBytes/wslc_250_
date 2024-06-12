@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            cursor: none;
+        }
+
+        body > div{
+            height: 60vh;
+            background-color: lightcoral;
+        }
+
+        body > div:nth-of-type(odd){
+            background-color: lightseagreen;
+        }
+
+        .progress-bar-track{
+            height: 8px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background-color: red !important;
+        }
+
+        .progress-bar-thumb{
+            height: 100%;
+            background-color: yellow;
+        }
+
+        .curser-custom{
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: blue !important;
+            z-index: 99999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="curser-custom"></div>
+    <div class="progress-bar-track">
+        <div class="progress-bar-thumb"></div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    <script>
+        const thumb = document.querySelector('.progress-bar-thumb');
+        const body = document.querySelector('body');
+
+        const bHeight = body.getBoundingClientRect().height;
+        const winHeight = (window.innerHeight / bHeight) * 100;
+
+        thumb.style.width = `${winHeight}%`;
+
+
+        window.addEventListener('scroll', ()=>{
+            const scrollCount = pageYOffset;
+
+            let scrollPer = (scrollCount / bHeight) * 100;
+
+            thumb.style.width = `${ scrollPer + winHeight}%`;
+        });
+
+        const customCurser = document.querySelector('.curser-custom');
+
+        window.addEventListener('mousemove', (e)=>{
+            
+            customCurser.style.top = `${e.clientY}px`;
+            customCurser.style.left = `${e.clientX}px`;
+        });
+    </script>
+</body>
+</html>
