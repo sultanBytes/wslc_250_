@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            background-color: olive;
+        }
+
+        .container h1{
+            text-align: center;
+            font-size: 28px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: white;
+            padding: 20px 0;
+            text-decoration: underline;
+        }
+
+        .container > div{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 1140px;
+            margin: auto;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .racipe-card{
+            border-radius: 6px 6px 0 0;
+            overflow: hidden;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .racipe-card h4{
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .racipe-card::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(12, 12, 12, 0.505);
+            transform-origin: center;
+            transform: scaleX(0);
+            transition: 0.2s;
+        }
+
+        .racipe-card:hover::before{
+            transform: scaleX(1);
+        }
+
+        .racipe-card::after{
+            content: "Deatils";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .racipe-card:hover::after{
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .details-model{
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: inset 0 0 4px 2px rgb(51, 47, 47);
+            width: 600px;
+            height: 400px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.315);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Racipes</h1>
+        <div>
+            <!-- <div class="racipe-card">
+                <div class="thumbnail">
+                    <img src="https://cdn.dummyjson.com/recipe-images/1.webp" alt="">
+                </div>
+                <h4>
+                    Classic Margherita Pizza
+                </h4>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="details-model"></div>
+
+
+
+    <script>
+
+        const cardContainer = document.querySelector('.container > div');
+
+        const url = 'https://dummyjson.com/recipes?limit=50';
+
+        const fetchData = async()=>{
+            const response =await fetch(url);
+            const data = await response.json();
+
+            let allData = '';
+
+            data.recipes.forEach((v)=>{
+                allData += ` <div class="racipe-card">
+                <div class="thumbnail">
+                    <img src="${v.image}" alt="">
+                </div>
+                <h4>
+                    ${v.name}
+                </h4>
+            </div>`;
+            });
+
+            cardContainer.innerHTML = allData;
+        };
+
+        fetchData();
+    </script>
+</body>
+</html>
